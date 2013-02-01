@@ -1,0 +1,53 @@
+<html>
+<body>
+<!-- JUST CSS FOR THE TEST -->
+
+
+
+<!-- <link rel="stylesheet" href="build/build.css"> -->
+<script src="build/build.js"></script>
+<script>  
+  var isNodeReady = require("node-ready");
+
+  isNodeReady("header", function(node){
+    console.log('node found');
+    console.log(node)
+  },function(){});
+
+  isNodeReady("footer", function(node){
+    console.log('node found');
+    console.log(node)
+  },function(){});
+
+
+  isNodeReady("#test55", function(node){
+    console.log('node found');
+    console.log(node)
+  },function(query){
+    console.log('node not found: ' + query);
+  });
+  // console.log(isNodeReady(".test1"));
+  // console.log(isNodeReady("#test2"));
+  // console.log(isNodeReady('div'));
+</script>
+
+
+
+<header>Header</header>
+
+<div class="test1">Test 1</div>
+
+<span id="test2"></span>
+
+<footer>Footer</footer>  
+
+<script>
+//console.log(isNodeReady("header"));
+isNodeReady(".test1", function(node){
+    console.log('node found after');
+    console.log(node)
+  },function(){});
+</script>
+
+</body>
+</html>

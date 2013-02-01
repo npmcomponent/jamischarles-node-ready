@@ -1,0 +1,15 @@
+{
+  "name": "node-ready",
+  "repo": "jamischarles/node-ready",
+  "description": "Fires callback when a given dom node is ready in the DOM for access.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/zest": "*"
+    },
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
