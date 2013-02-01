@@ -42,6 +42,7 @@ module.exports = function(query, success, failure, cfg){
 
     //if yes, pass nodes to success
     if (el_array.length !== 0){
+      console.log(query + " found");
       //cancel timeout timer
       clearTimeout(failure_timer);
 
