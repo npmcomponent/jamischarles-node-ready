@@ -9,6 +9,21 @@
 <script>  
   var isNodeReady = require("node-ready");
 
+
+  
+
+  //combined everything example
+  var cfg = {
+    timeout: 10, //timeout with failure after 10 seconds if query not found. Defaults to 5 seconds.
+    interval: 300 //poll the DOM for the node query ever 300 ms. Default is 200 ms.
+  }
+
+isNodeReady('header', function(nodes){
+  console.log('success!');
+}, function(query){
+  console.log('failure...');
+}, cfg);
+
   isNodeReady("header", function(node){
     console.log('node found');
     console.log(node)
@@ -33,9 +48,6 @@
   },function(query){
     console.log('COMBO node not found: ' + query);
   });
-  // console.log(isNodeReady(".test1"));
-  // console.log(isNodeReady("#test2"));
-  // console.log(isNodeReady('div'));
 </script>
 
 
