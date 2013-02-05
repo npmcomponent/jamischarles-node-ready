@@ -26,6 +26,13 @@
   },function(query){
     console.log('node not found: ' + query);
   });
+
+  isNodeReady("header#test3, .test1", function(node){
+    console.log('COMBO node found');
+    console.log(node)
+  },function(query){
+    console.log('COMBO node not found: ' + query);
+  });
   // console.log(isNodeReady(".test1"));
   // console.log(isNodeReady("#test2"));
   // console.log(isNodeReady('div'));
