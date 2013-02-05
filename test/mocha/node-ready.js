@@ -121,7 +121,32 @@ describe('isNodeReady(query, success, failure, cfg)', function(){
   // });
   
 
+  //
+  //"should throw no errors. Silent fail."
+  describe("if 3rd param (optional failure callback) is omitted, isNodeReady()", function(){
+    var query;
+    var test_node;
+
+    before(function(){
+      query = ".test_el";
+    });
+
+
+    it("should throw no errors.", function(done){
+      
+      //FIXME: this test can be more robust. Can we expose the throw error?
+      //fire the done after 6 seconds (since the default timeout is 5 seconds)
+      isNodeReady(query, function(){});
+      setTimeout(done, 6000);
+      //Q: How do I get it to fail? I need to pass the exception...
+     
+    })
+  });
+
+
   //TODO: test multiple queries
+
+  //test for optional params.
 
 
   //"if no timeout is passed in (as part of cfg obj), isNodeReady()"
