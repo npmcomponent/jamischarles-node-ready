@@ -10,10 +10,11 @@
  */ 
 var zest = require('zest');
 
-//last param is optional
+//first 2 params are required
 module.exports = function(query, success, failure, cfg){
   console.log('query: ' + query);
   cfg = cfg || {};
+  failure = failure || function(){};
 
   //defaults
   var poll_interval = cfg.interval || 200; //poll the DOM every * ms.
