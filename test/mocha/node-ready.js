@@ -121,6 +121,8 @@ describe('isNodeReady(query, success, failure, cfg)', function(){
   // });
   
 
+  //TODO: test multiple queries
+
 
   //"if no timeout is passed in (as part of cfg obj), isNodeReady()"
 
