@@ -112,6 +112,54 @@ describe('isNodeReady(query, success, failure, cfg)', function(){
   });
   
 
+  //""
+  //""
+  describe("if debug mode is turned off (default), isNodeReady()", function(){
+    var query = ".test_el";
+    var spy;
+    before(function(){
+      spy = sinon.spy(console, "log"); //sets up a listener for console.log()
+    });
+
+    after(function(){
+      console.log.restore(); //unwrap the spy
+    });
+
+    it("should NOT call console.log", function(done){
+      var cfg = {timeout: 2}
+      isNodeReady(query, function(result_array){}, function(failed_query){
+        spy.should.not.have.been.called;
+        done();
+      }, cfg);
+      
+    });
+
+  })
+
+
+  describe("if debug mode is turned on by passing 'debug: true' (and browser supports it), isNodeReady()", function(){
+    var query = ".test_el";
+    var spy;
+    before(function(){
+      spy = sinon.spy(console, "log");
+    });
+
+    after(function(){
+      console.log.restore(); //unwrap the spy
+    });
+
+    it("should call console.log", function(done){
+      var cfg = {timeout: 2, debug: true}
+      isNodeReady(query, function(result_array){}, function(failed_query){
+        spy.should.have.been.called;
+        done();
+      }, cfg)
+      
+      
+    });
+
+  })
+
   // describe("if cfg is passed in, with poll interval of 300 (ms)", function(){
   //   it("should poll the dom every 300 ms.", function(done){
   //     assert.equal(0,1, "in progress");

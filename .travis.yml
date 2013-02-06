@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - 0.8
+
+before_script:
+  - npm install -g mocha-phantomjs
+  - npm install -g component
+  - component install
+  - component build
+script: mocha-phantomjs test/mocha/tests.html	
