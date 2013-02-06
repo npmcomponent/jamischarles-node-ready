@@ -26,7 +26,7 @@ module.exports = function(query, success, failure, cfg){
   var debugLog = function(msg){
     //if window.console is avaialable, AND debug is set to true, output to the console.
     if(window.console && debug){
-      console.log(msg);
+      console.log("Node-ready: " + msg);
     }
   };
 
