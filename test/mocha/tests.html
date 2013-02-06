@@ -7,8 +7,14 @@
   </head>
   <body>
     <div id="mocha"></div>
+    <!-- Base Mocha Test framework -->
     <script src="mocha.js"></script>
+    <!-- Browser based should-->
     <script src="http://chaijs.com/chai.js"></script>
+    <!-- Sinon hook for chai (stubs, spies etc) -->
+    <script src="sinon-chai.js"></script> 
+    <script src="sinon.js"></script>
+
     <script>
       mocha.setup('bdd')
       /*mocha.setup({

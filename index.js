@@ -12,18 +12,27 @@ var zest = require('zest');
 
 //last param is optional
 module.exports = function(query, success, failure, cfg){
-  console.log('query: ' + query);
+  //setup console.log replacement
+  var debugLog = function(msg){
+    //if window.console is avaialable, AND debug is set to true, output to the console.
+    if(window.console && debug){
+      console.log(msg);
+    }
+  };
+
+  debugLog('query: ' + query);
   cfg = cfg || {};
 
   //defaults
   var poll_interval = cfg.interval || 200; //poll the DOM every * ms.
   var failure_interval = (cfg.timeout * 1000) || (5 * 1000); //timeout after * seconds. Default is 5 seconds
+  var debug = cfg.debug || false;
   var failure_timer;
   var poll_timer;
   
   //set timeout
 
-  //send back timeout failure
+  
 
   var isElFound = function(el_query){
     return zest(el_query);
@@ -31,18 +40,18 @@ module.exports = function(query, success, failure, cfg){
   
   var abortPolling = function(){
     //cancel poll timer
-    console.log(query + ' el not found. Aborting.')
+    debugLog(query + ' el not found. Aborting.')
     clearTimeout(poll_timer);
     failure(query);
   }
 
   var pollDom = function(){
-    console.log('polling for ' + query);
+    debugLog('polling for ' + query);
     var el_array = isElFound(query);
 
     //if yes, pass nodes to success
     if (el_array.length !== 0){
-      console.log(query + " found");
+      debugLog(query + " found");
       //cancel timeout timer
       clearTimeout(failure_timer);
 
