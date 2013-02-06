@@ -20,6 +20,8 @@ var cfg = {
   debug: true //output console.logs()
 }
 
+//isNodeReady(query, success, failure, cfg); First 2 params are required.
+
 isNodeReady('.btns', function(nodes){
   console.log('success!');
 }, function(query){
