@@ -4,4 +4,8 @@ node_js:
   - 0.5
   - 0.6
 
+before_script:
+  - npm install -g component
+  - component install
+  - component build
 script: phantomjs test/mocha/tests.html	
