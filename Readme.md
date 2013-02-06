@@ -14,13 +14,18 @@
 ```js
 var isNodeReady = require("node-ready");
 
+//isNodeReady(query, success, failure, cfg); First 2 params are required.
+isNodeReady('.btns', function(nodes){
+  console.log('success!');
+});
+
+
+//example with all params passed in
 var cfg = {
   timeout: 10, //timeout with failure after 10 seconds if query not found. Default is 5 seconds.
   interval: 300, //poll the DOM for the node query ever 300 ms. Default is 200 ms.
   debug: true //output console.logs()
 }
-
-//isNodeReady(query, success, failure, cfg); First 2 params are required.
 
 isNodeReady('.btns', function(nodes){
   console.log('success!');
