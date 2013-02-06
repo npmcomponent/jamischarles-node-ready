@@ -1,3 +1,4 @@
+[![Build Status](https://secure.travis-ci.org/jamischarles/node-ready.png)](http://travis-ci.org/jamischarles/node-ready)
 
 # node-ready
 
