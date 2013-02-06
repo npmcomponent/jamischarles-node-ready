@@ -118,7 +118,7 @@ describe('isNodeReady(query, success, failure, cfg)', function(){
     var query = ".test_el";
     var spy;
     before(function(){
-      spy = sinon.spy(console, "log"); //sets up a listener for console.log()
+      
     });
 
     after(function(){
@@ -127,8 +127,10 @@ describe('isNodeReady(query, success, failure, cfg)', function(){
 
     it("should NOT call console.log", function(done){
       var cfg = {timeout: 2}
+      spy = sinon.spy(console, "log"); //sets up a listener for console.log(). This should be in the before() but since mocha-phantomjs calls console.log() that causes problems. Needs to be here for that reason.
       isNodeReady(query, function(result_array){}, function(failed_query){
         spy.should.not.have.been.called;
+
         done();
       }, cfg);
       
