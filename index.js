@@ -12,15 +12,6 @@ var zest = require('zest');
 
 //first 2 params are required
 module.exports = function(query, success, failure, cfg){
-  //setup console.log replacement
-  var debugLog = function(msg){
-    //if window.console is avaialable, AND debug is set to true, output to the console.
-    if(window.console && debug){
-      console.log(msg);
-    }
-  };
-
-  debugLog('query: ' + query);
   cfg = cfg || {};
   failure = failure || function(){};
 
@@ -30,6 +21,16 @@ module.exports = function(query, success, failure, cfg){
   var debug = cfg.debug || false;
   var failure_timer;
   var poll_timer;
+
+  //setup console.log replacement
+  var debugLog = function(msg){
+    //if window.console is avaialable, AND debug is set to true, output to the console.
+    if(window.console && debug){
+      console.log(msg);
+    }
+  };
+
+  debugLog('query: ' + query);
   
   //set timeout
 
