@@ -8,7 +8,7 @@
  * Module dependencies
  * 
  */ 
-var zest = require('zest');
+var qwery = require('qwery');
 
 //first 2 params are required
 module.exports = function(query, success, failure, cfg){
@@ -37,7 +37,7 @@ module.exports = function(query, success, failure, cfg){
   
 
   var isElFound = function(el_query){
-    return zest(el_query);
+    return qwery(el_query);
   }
   
   var abortPolling = function(){
