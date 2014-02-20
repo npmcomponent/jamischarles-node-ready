@@ -8,7 +8,7 @@
  * Module dependencies
  * 
  */ 
-var qwery = require('qwery');
+var qwery = require('fs-components-qwery');
 
 //first 2 params are required
 module.exports = function(query, success, failure, cfg){

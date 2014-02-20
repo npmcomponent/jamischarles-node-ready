@@ -1,0 +1,10 @@
+{
+  "name": "jamischarles-node-ready",
+  "description": "Fires callback when a given dom node is ready in the DOM for access.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "fs-components-qwery": "git://github.com/npmcomponent/fs-components-qwery.git"
+  },
+  "license": "MIT"
+}
